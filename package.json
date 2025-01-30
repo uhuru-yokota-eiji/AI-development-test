@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "puppeteer": "^24.1.1"
+  }
+}
