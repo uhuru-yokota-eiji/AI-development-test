@@ -1,4 +1,12 @@
 # Cline Rules
 
+## 方針
+
+- docs/coding_guidline.md のコーディング規約に沿ってコーディングを行う。
+  - 実装後、コーディング規約に沿っているか確認してから、作業完了とする。
+
+## 開発言語
+
 - フロントエンド: Vue.js
 - バックエンド: Node.js (TypeScript)
+
