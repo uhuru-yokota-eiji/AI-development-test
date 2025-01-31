@@ -267,33 +267,7 @@ describe('UserController', () => {
 
 ## 9. ESLint / 自動フォーマット
 
-### 9.1 Linter の設定
-
--   ESLint を導入し、プロジェクトルートに `.eslintrc.js` または `.eslintrc.json` を配置する。
-
-```javascript
-// .eslintrc.js の例
-module.exports = {
-  env: {
-    node: true,
-    es2021: true,
-  },
-  extends: ['eslint:recommended'],
-  parserOptions: {
-    ecmaVersion: 12,
-  },
-  rules: {
-    'semi': ['error', 'always'],
-    'quotes': ['error', 'single'],
-    'no-var': 'error',
-  },
-};
-```
-
-### 9.2 プリティア（Prettier）との連携
-
--   Prettier を併用してコードフォーマットを自動化する場合は、ESLint と競合しないように `eslint-config-prettier` を導入する。
--   pre-commit フックなどを利用して、コミット前に自動整形を行う。
+- backendフォルダ内でコード実装後は、npm run lint を実行し成功を確認する
 
 ## 10. パッケージ管理・バージョン管理
 

@@ -1,7 +1,13 @@
 const globals = require('globals');
 const typescriptParser = require('@typescript-eslint/parser');
+const { FlatCompat } = require('@eslint/eslintrc');
+const compat = new FlatCompat({
+    baseDirectory: __dirname
+});
+
 
 module.exports = [
+    ...compat.extends('prettier'),
     {
         languageOptions: {
             parser: typescriptParser,
@@ -10,7 +16,7 @@ module.exports = [
             globals: {
                 ...globals.es6,
                 ...globals.node,
-            }
-        }
+            },
+        },
     },
 ];
