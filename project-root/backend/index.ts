@@ -11,30 +11,30 @@ const BOX_API_TOKEN = process.env.BOX_API_TOKEN; // 環境変数からBox APIの
 
 // 検索エンドポイント
 app.get('/api/search', async (req, res) => {
-    const keyword = req.query.keyword as string;
-    try {
-        const response = await axios.get(BOX_API_URL, {
-            headers: {
-                Authorization: `Bearer ${BOX_API_TOKEN}`
-            },
-            params: {
-                query: keyword,
-                fields: 'name,shared_link'
-            }
-        });
-        const results = response.data.entries.map((entry: any) => ({
-            id: entry.id,
-            name: entry.name,
-            link: entry.shared_link ? entry.shared_link.url : '#'
-        }));
-        res.json(results);
-    } catch (error) {
-        console.error('Box APIエラー:', error);
-        res.status(500).send('検索に失敗しました');
-    }
+  const keyword = req.query.keyword as string;
+  try {
+    const response = await axios.get(BOX_API_URL, {
+      headers: {
+        Authorization: `Bearer ${BOX_API_TOKEN}`,
+      },
+      params: {
+        query: keyword,
+        fields: 'name,shared_link',
+      },
+    });
+    const results = response.data.entries.map((entry: any) => ({
+      id: entry.id,
+      name: entry.name,
+      link: entry.shared_link ? entry.shared_link.url : '#',
+    }));
+    res.json(results);
+  } catch (error) {
+    console.error('Box APIエラー:', error);
+    res.status(500).send('検索に失敗しました');
+  }
 });
 
 // サーバーを起動
 app.listen(PORT, () => {
-    console.log(`サーバーがポート${PORT}で起動しました`);
+  console.log(`サーバーがポート${PORT}で起動しました`);
 });
