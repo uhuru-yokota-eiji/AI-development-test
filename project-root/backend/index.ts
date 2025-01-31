@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // Box APIの設定
 const BOX_API_URL = 'https://api.box.com/2.0/search';
-const BOX_API_TOKEN = 'YOUR_BOX_API_TOKEN'; // ここにBox APIのトークンを設定
+const BOX_API_TOKEN = process.env.BOX_API_TOKEN; // 環境変数からBox APIのトークンを取得
 
 // 検索エンドポイント
 app.get('/api/search', async (req, res) => {
